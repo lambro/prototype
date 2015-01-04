@@ -1,0 +1,61 @@
+/*utilities*/
+/*  
+font-family: 'Quicksand', sans-serif;
+font-family: 'Muli', sans-serif;
+font-family: 'Didact Gothic', sans-serif;
+font-family: 'Montserrat Subrayada', sans-serif;
+font-family: 'Six Caps', sans-serif;
+font-family: 'Loved by the King', cursive;
+*/
+
+video { display: block; }
+video#bgvid {
+position: fixed; right: 0; bottom: 0;
+min-width: 100%; min-height: 100%;
+width: auto; height: auto; z-index: -100;
+background: url(polina.jpg) no-repeat;
+background-size: cover;
+}
+
+a{
+  color:orange;
+  text-decoration: none;
+}
+
+a:hover{
+  color:orange;
+  text-decoration: underline;
+}
+
+h1{
+  color: black;
+  text-align: center;
+  font-family: 'Muli', sans-serif;
+  font-size: 3em;
+}
+
+p{
+  text-align: center;
+  font-family: 'Loved by the King', cursive;
+  font-size: 1.5em;
+  color:white;
+}
+
+.container{
+  width:60%;
+  background-color: rgba(217, 214, 198, 0.4);
+  border: solid black 3px;
+  margin:0 auto;
+}
+
+img{
+  width:45%;
+  margin:5% 25%;
+}
+
+/*media queries*/
+
+@media screen and (max-device-width: 800px) {
+html { background: url(backgroundshot.jpg) #000 no-repeat center center fixed; }
+#bgvid { display: none; }
+}
