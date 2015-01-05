@@ -8,13 +8,25 @@ font-family: 'Six Caps', sans-serif;
 font-family: 'Loved by the King', cursive;
 */
 
+*{
+  box-sizing: border-box;
+}
+
 video { display: block; }
 video#bgvid {
 position: fixed; right: 0; bottom: 0;
 min-width: 100%; min-height: 100%;
 width: auto; height: auto; z-index: -100;
-background: url(polina.jpg) no-repeat;
+background: url(../images/backgroundshot.png) no-repeat;
 background-size: cover;
+}
+
+video#bgvid { -webkit-transition: 1s opacity; }
+.stopfade { -webkit-opacity: .5; }
+
+#vidpause{
+  width:100%;
+  text-align:right;
 }
 
 a{
@@ -27,11 +39,20 @@ a:hover{
   text-decoration: underline;
 }
 
+.main{
+  font-size: 3.5em;
+}
+
 h1{
   color: black;
   text-align: center;
   font-family: 'Muli', sans-serif;
   font-size: 3em;
+}
+
+h2{
+  text-align: center;
+  font-family: 'Didact Gothic', sans-serif;
 }
 
 p{
@@ -42,10 +63,25 @@ p{
 }
 
 .container{
-  width:60%;
-  background-color: rgba(217, 214, 198, 0.4);
+  width:0;
+  background-color: rgba(217, 214, 198, 0.6);
   border: solid black 3px;
-  margin:0 auto;
+  margin:15% auto;
+  text-align: center;
+  padding: 0;
+  display:none;
+}
+
+.main, .main2 {
+  display:none;
+}
+
+.container i {
+  font-size: 2em;
+}
+
+.container i{
+  display: none;
 }
 
 img{
@@ -56,6 +92,6 @@ img{
 /*media queries*/
 
 @media screen and (max-device-width: 800px) {
-html { background: url(backgroundshot.jpg) #000 no-repeat center center fixed; }
+html { background: url(../images/backgroundshot.jpg) #000 no-repeat center center fixed; }
 #bgvid { display: none; }
 }
