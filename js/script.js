@@ -65,7 +65,7 @@ $(function(){
         $intromenu.addClass('active')
       }
     },
-    offset: 10
+    offset: 100
   })
 
   $intro.waypoint({
@@ -134,8 +134,10 @@ $(function(){
   // ending introduction //
 
   $("#enter, #topmenu").on('click', function(){
-    $('#bgvid').fadeToggle(15000);
-    $('#maincontent').delay(500).fadeToggle();
+    $('#bgvid').fadeToggle(15000, function(){
+     $('body').animate({'background-color': 'white'}, 7000);
+    });
+    $('#maincontent').delay(500).fadeToggle(200);
     $('#section1, #vidpause').fadeToggle();
     $('#nav').delay(600).slideToggle(1000);
     // move video or somehow slide down to next page on chevron
