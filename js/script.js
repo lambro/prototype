@@ -1,16 +1,67 @@
 $(function(){
+
+  // opening animation //
   console.log( "ready!" );
 
-  $(".container").fadeIn(500).animate({
-    height: '45%',
+  $(".firstcontainer").fadeIn(200).animate({
+    height: '30%',
     color: 'black'
-  }, 1000).delay(200).animate({
+  }, 800).delay(200).animate({
     width: '60%',
     padding: '2%',
-  }, 1000);
+  }, 800);
 
-  $(".main").delay(3000).fadeIn(1500);
-  $(".main2, .fa-chevron-down").delay(4600).slideDown(500);
+  $(".main").delay(1500).fadeIn(1500);
+  $(".main2, .fa-chevron-down").delay(2000).slideDown(500);
+
+  // waypoints variables //
+
+  var $nav = $("#nav");
+  var $nav_links = $("nav a")
+  var $intro = $("#intro");
+  var $intromenu = $("#intromenu");
+
+  // waypoints //
+
+  $nav_links.click( function(event) {
+    $.scrollTo(
+      $(this).attr("href"),
+      {
+        duration: 1000,
+        easing: 'linear',
+        offset: { 'left':0, 'top':500 }
+      }
+    );
+  });
+
+  $intro.waypoint({
+    handler: function(direction){
+      if (direction == "down") {
+        removeActive();
+        $intromenu.addClass('active')
+      }
+    },
+    offset: -50
+  })
+
+  $intro.waypoint({
+    handler: function(direction){
+      if (direction == "up") {
+        removeActive();
+        $nav_one.addClass('active')
+      }
+    },
+    offset: function() {
+      return -$(this).height();
+    }
+  })
+
+  function removeActive() {
+    $nav_links.removeClass('active');
+  };
+
+
+  // pause button //
 
   var vid = document.getElementById("bgvid");
   var pauseButton = document.getElementById("vidpause");
@@ -32,8 +83,13 @@ $(function(){
     }
   })
 
-  $("#enter").on('click', function(){
-    $('#bgvid').fadeToggle(2000);
+  // ending introduction //
+
+  $("#enter, #topmenu").on('click', function(){
+    $('#bgvid').fadeToggle(15000);
+    $('#maincontent').delay(500).fadeToggle();
+    $('#section1, #vidpause').fadeToggle();
+    $('#nav').delay(600).slideToggle(1000);
     // move video or somehow slide down to next page on chevron
   })
 });

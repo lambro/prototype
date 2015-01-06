@@ -10,15 +10,23 @@ font-family: 'Loved by the King', cursive;
 
 *{
   box-sizing: border-box;
+  font-family: 'Didact Gothic', sans-serif;
+}
+
+img.bottomimage{
+  position:fixed;
+  top:-50;
+  left:0;
+  z-index:-200;
 }
 
 video { display: block; }
 video#bgvid {
-position: fixed; right: 0; bottom: 0;
-min-width: 100%; min-height: 100%;
-width: auto; height: auto; z-index: -100;
-background: url(../images/backgroundshot.png) no-repeat;
-background-size: cover;
+  position: fixed; right: 0; bottom: 0;
+  min-width: 100%; min-height: 100%;
+  width: auto; height: auto; z-index: -100;
+  background: url(../images/backgroundshot.png) no-repeat;
+  background-size: cover;
 }
 
 video#bgvid { -webkit-transition: 1s opacity; }
@@ -27,42 +35,104 @@ video#bgvid { -webkit-transition: 1s opacity; }
 #vidpause{
   width:100%;
   text-align:right;
+  color: rgba(217, 214, 198, 1.0);
+}
+
+#vidpause:hover{
+  color:orange;
+}
+
+/*nav bar styling*/
+
+
+#nav{
+  width:100%;
+  text-align: center;
+  font-size: 2em;
+  padding: 2%;
+  text-decoration: bolder;
+  background-color: rgba(217, 214, 198, 0.6);
+  letter-spacing: 5px;
+  top:0;
+  position:fixed;
+  z-index: 100;
+}
+
+/*end of nav bar styling*/
+
+#nav a{
+  color:orange !important;
+  text-decoration: none;
+  font-family: 'Six Caps', sans-serif;
+  margin:2%;
+  letter-spacing: 5px;
+}
+
+#nav a.active{
+  color: rgba(79, 15, 34, 1.0);
 }
 
 a{
-  color:orange;
+  color:orange !important;
   text-decoration: none;
+  font-family: 'Six Caps', sans-serif;
+  letter-spacing: 2px;
+  font-weight: bold;
 }
 
-a:hover{
+
+#nav a:hover, a:hover{
   color:orange;
   text-decoration: underline;
 }
 
+
 .main{
   font-size: 3.5em;
+  letter-spacing: 5px;
+  line-height: 1.4em;
 }
 
 h1{
   color: black;
   text-align: center;
-  font-family: 'Muli', sans-serif;
+  font-family: 'Muli', sans-serif !important;
   font-size: 3em;
 }
 
 h2{
   text-align: center;
-  font-family: 'Didact Gothic', sans-serif;
+  font-family: 'Didact Gothic', sans-serif !important;
 }
 
 p{
   text-align: center;
-  font-family: 'Loved by the King', cursive;
-  font-size: 1.5em;
-  color:white;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 0.9em;
+  color: 5a5a5a;
+  line-height: 1.5em;
 }
 
-.container{
+p a{
+  color:rgba(79, 15, 34, 1.0) !important;
+  text-decoration: none;
+  letter-spacing: 2px;
+  font-weight: bold;
+  font-family: 'Quicksand', sans-serif;
+}
+
+#nav{
+  display:none;
+}
+
+#maincontent{
+  height: 80%;
+  width: 70%;
+  margin: 5% auto;
+  display:none;
+}
+
+.firstcontainer{
   width:0;
   background-color: rgba(217, 214, 198, 0.6);
   border: solid black 3px;
@@ -76,22 +146,74 @@ p{
   display:none;
 }
 
-.container i {
+#section1 i {
   font-size: 2em;
-}
-
-.container i{
   display: none;
+  cursor:pointer;
 }
 
-img{
-  width:45%;
-  margin:5% 25%;
+.introduction{
+  border-bottom: solid 3px black;
+  border-top: solid 3px black;
+  background: rgba(217, 214, 198, 0.8);
+  margin-top: 50px;
+}
+
+.right p{
+  text-align: justify;
+  margin:5% 0;
+  display: inline-block;
+  font-size: 1.5em;
+  width:60%;
+  border-left: solid black 3px;
+  float:left;
+  padding:3%;
+}
+
+.right i{
+  cursor:pointer;
+  margin:5% 50%;
+  font-size: 1.5em;
+}
+
+.mypic{
+  border-radius:50%;
+  width: 25%;
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+  border: solid 3px 4f0f22;
+  margin:10% 5%;
+  float:left;
+}
+
+.mypic:hover{
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
+}
+
+#about{
+  margin:30% auto;
+  background: rgba(79, 15, 34, 0.5);
+  padding:5%;
+  color:white;
+  border:solid 3px rgba(79, 15, 34, 1.0);
+  font-size:1.2em;
+  letter-spacing: 2px;
+  line-height: 1.5em;
+}
+
+footer{
+  position:fixed;
+  bottom:0;
+  width:100%;
+  text-align: center;
+  padding:1%;
+  font-size: 1.5em;
 }
 
 /*media queries*/
 
 @media screen and (max-device-width: 800px) {
-html { background: url(../images/backgroundshot.jpg) #000 no-repeat center center fixed; }
-#bgvid { display: none; }
+  html { background: url(../images/backgroundshot.jpg) #000 no-repeat center center fixed; }
+  #bgvid { display: none; }
 }
