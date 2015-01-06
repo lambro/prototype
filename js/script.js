@@ -17,9 +17,18 @@ $(function(){
   // waypoints variables //
 
   var $nav = $("#nav");
-  var $nav_links = $("nav a")
+  var $nav_links = $("#nav a")
+  var $para_links = $('#para')
   var $intro = $("#intro");
+  var $about = $("#about");
+  var $tech = $("#tech");
+  var $education = $("#education");
+  var $real = $("#real");
   var $intromenu = $("#intromenu");
+  var $aboutmenu = $("#aboutmenu");
+  var $techmenu = $("#techmenu");
+  var $educationmenu = $("#educationmenu");
+  var $realmenu = $("#realmenu");
 
   // waypoints //
 
@@ -28,11 +37,26 @@ $(function(){
       $(this).attr("href"),
       {
         duration: 1000,
-        easing: 'linear',
-        offset: { 'left':0, 'top':500 }
+        easing: 'easeInOutExpo',
+        offset: { 'left':0, 'top': -130 }
+      }
+    );
+    removeActive();
+    $(this).addClass('active')
+  });
+
+  $para_links.click( function(event) {
+    $.scrollTo(
+      $(this).attr("href"),
+      {
+        duration: 1000,
+        easing: 'easeInOutExpo',
+        offset: { 'left':0, 'top':-130 }
       }
     );
   });
+
+//nav menu waypoints//
 
   $intro.waypoint({
     handler: function(direction){
@@ -41,20 +65,44 @@ $(function(){
         $intromenu.addClass('active')
       }
     },
-    offset: -50
+    offset: 10
   })
 
   $intro.waypoint({
     handler: function(direction){
       if (direction == "up") {
         removeActive();
-        $nav_one.addClass('active')
+        $intromenu.addClass('active')
       }
     },
     offset: function() {
       return -$(this).height();
     }
   })
+
+  $about.waypoint({
+    handler: function(direction){
+      if (direction == "down") {
+        removeActive();
+        $aboutmenu.addClass('active')
+      }
+    },
+    offset: -10
+  })
+
+  $about.waypoint({
+    handler: function(direction){
+      if (direction == "up") {
+        removeActive();
+        $aboutmenu.addClass('active')
+      }
+    },
+    offset: function() {
+      return -$(this).height();
+    }
+  })
+
+
 
   function removeActive() {
     $nav_links.removeClass('active');

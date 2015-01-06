@@ -63,15 +63,15 @@ video#bgvid { -webkit-transition: 1s opacity; }
 /*end of nav bar styling*/
 
 #nav a{
-  color:orange !important;
+  color:orange;
   text-decoration: none;
   font-family: 'Six Caps', sans-serif;
   margin:2%;
   letter-spacing: 5px;
 }
 
-#nav a.active{
-  color: rgba(79, 15, 34, 1.0);
+.active{
+  color: rgba(79, 15, 34, 1.0) !important;
 }
 
 a{
@@ -216,7 +216,17 @@ footer{
 
 /*media queries*/
 
-@media screen and (max-device-width: 800px) {
+@media screen and (max-width: 800px) {
   html { background: url(../images/backgroundshot.jpg) #000 no-repeat center center fixed; }
   #bgvid { display: none; }
+  #intro.introduction, #maincontent { width:100%; padding:0;}
+  #nav a{font-size: 1em; width: 20%; display: inline-block;}
+  #nav {background: rgba(217, 214, 198, 1.0);}
+}
+
+@media screen and (max-width: 670px) {
+  html { background: url(../images/backgroundshot.jpg) #000 no-repeat center center fixed; }
+  #bgvid { display: none; }
+  #intro.introduction, #maincontent { width:100%; padding:0;}
+  #nav {display: none;}
 }
