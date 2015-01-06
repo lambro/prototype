@@ -36,6 +36,8 @@ video#bgvid { -webkit-transition: 1s opacity; }
   width:100%;
   text-align:right;
   color: rgba(217, 214, 198, 1.0);
+  margin-top:10px;
+  padding-right: 10px;
 }
 
 #vidpause:hover{
@@ -200,6 +202,7 @@ p a{
   font-size:1.2em;
   letter-spacing: 2px;
   line-height: 1.5em;
+  font-family: 'Quicksand', sans-serif;
 }
 
 footer{
