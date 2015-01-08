@@ -58,7 +58,8 @@ video#bgvid { -webkit-transition: 1s opacity; }
   letter-spacing: 5px;
   top:0;
   position:fixed;
-  z-index: 100;
+  z-index:1000;
+  -webkit-transform: translateZ(0);
 }
 
 /*end of nav bar styling*/
@@ -108,13 +109,15 @@ a{
   font-size: 3.5em;
   letter-spacing: 5px;
   line-height: 1.4em;
+  font-family: 'Muli', sans-serif !important;
 }
 
 h1{
   color: black;
   text-align: center;
-  font-family: 'Muli', sans-serif !important;
+  font-family: 'Six Caps', sans-serif !important;
   font-size: 3em;
+  letter-spacing: 6px;
 }
 
 h2{
@@ -213,7 +216,8 @@ p a{
   background: rgba(79, 15, 34, 0.5);
   padding:5%;
   color:white;
-  border:solid 3px rgba(79, 15, 34, 1.0);
+  border-top:solid 3px rgba(79, 15, 34, 1.0);
+  border-bottom:solid 3px rgba(79, 15, 34, 1.0);
   font-size:1.2em;
   text-align: center;
   letter-spacing: 2px;
@@ -246,19 +250,37 @@ footer{
   bottom:-10px;
 }
 
+#sendanemail{
+  width:70%;
+  margin:0 auto;
+  background:red;
+}
+
+#sendanemail input{
+  width:100%;
+  margin-top:2%;
+  margin-bottom:2%;
+}
+
+#sendanemail{
+  margin-bottom: 100px;
+}
+
 /*media queries*/
 
-@media screen and (max-width: 800px) {
-  html { background: url(../images/backgroundshot.jpg) #000 no-repeat center center fixed; }
+@media screen and (max-width: 768px) {
+  /*html { background: url(../images/backgroundshot.jpg) #000 no-repeat center center fixed; }*/
   #bgvid { display: none; }
+  body{background-color: white;}
   #intro.introduction, #maincontent { width:100%; padding:0;}
   #nav a{font-size: 1em; width: 20%; display: inline-block;}
   #nav {background: rgba(217, 214, 198, 1.0);}
 }
 
 @media screen and (max-width: 670px) {
-  html { background: url(../images/backgroundshot.jpg) #000 no-repeat center center fixed; }
+  /*html { background: url(../images/backgroundshot.jpg) #000 no-repeat center center fixed; }*/
   #bgvid { display: none; }
+  body{background-color: white;}
   #intro.introduction, #maincontent { width:100%; padding:0;}
   #nav {display: none;}
 }

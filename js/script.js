@@ -15,17 +15,19 @@ $(function(){
   $(".main2, .fa-chevron-down").delay(2000).slideDown(500);
 
   // waypoints variables //
-
+  var $bgvid = $("#bgvid")
   var $nav = $("#nav");
   var $nav_links = $("#nav a")
   var $para_links = $('#para')
   var $intro = $("#intro");
   var $about = $("#about");
+  var $experience = $("#experience");
   var $tech = $("#tech");
   var $education = $("#education");
   var $real = $("#real");
   var $intromenu = $("#intromenu");
   var $aboutmenu = $("#aboutmenu");
+  var $experiencemenu = $("#experiencemenu");
   var $techmenu = $("#techmenu");
   var $educationmenu = $("#educationmenu");
   var $realmenu = $("#realmenu");
@@ -116,10 +118,6 @@ $(function(){
   function vidFade() {
     vid.classList.add("stopfade");
   }
-  vid.addEventListener('ended', function() {
-    vid.pause();
-    vidFade();
-  });
   pauseButton.addEventListener("click", function() {
     vid.classList.toggle("stopfade");
     if (vid.paused) {
@@ -133,10 +131,10 @@ $(function(){
 
   // ending introduction //
 
+  // here maybe instead of video fading out just make the backgrounf opaque..
+
   $("#enter, #topmenu").on('click', function(){
-    $('#bgvid').fadeToggle(15000, function(){
-     $('body').animate({'background-color': 'white'}, 7000);
-    });
+    $bgvid.addClass("stopfade");
     $('#maincontent').delay(500).fadeToggle(200);
     $('#section1, #vidpause').fadeToggle();
     $('#nav').delay(600).slideToggle(1000);
