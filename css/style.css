@@ -232,7 +232,9 @@ footer{
   text-align: center;
   padding:1%;
   font-size: 1.5em;
+  -webkit-transform: translateZ(0);
 }
+
 
 .fa-quote-left{
   color:orange;
@@ -250,16 +252,86 @@ footer{
   bottom:-10px;
 }
 
+#tech{
+  background:transparent;
+  width:100%;
+  padding:1%;
+  width:145.5%;
+  margin-left:-24%;
+}
+
+.bar{
+  margin:0;
+  height:70px;
+  width:60%;
+  background:rgba(255, 165, 0, 0.5);
+  vertical-align: center;
+  padding:1%;
+  margin-left:20%;
+  margin-top:1%;
+}
+
+.inner{
+  line-height: 45px;
+  height:45px;
+  margin-bottom:4%;
+  background-color:white;
+  display:inline-block;
+  font-size: 1.5em;
+}
+
+#html{ width:90%;}
+#css{  width:85%;}
+#ror{  width:65%;}
+#javaScript{  width:60%;}
+#jquery{  width:75%;}
+#angularJs{  width:60%;}
+
+
+
+#contact{
+  background-color: rgba(79, 15, 34, 0.5);
+  width:145.5%;
+  margin-left:-24%;
+}
+
 #sendanemail{
   width:70%;
   margin:0 auto;
-  background:red;
+  background:transparent;
+  text-align: center;
 }
 
 #sendanemail input{
+  border:0;
   width:100%;
-  margin-top:2%;
-  margin-bottom:2%;
+  margin:0;
+  padding:0;
+  padding-left:5px;
+  margin-top:1%;
+  height:35px;
+  font-size: 1.3em;
+  font-family: 'Quicksand', sans-serif;
+  border-radius:5px;
+  letter-spacing: 2px;
+  display:none;
+}
+
+#sendanemail textarea{
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.3em;
+  height: 200px;
+  width:100%;
+  margin-top:1%;
+  border-radius:5px;
+  letter-spacing: 2px;
+  display:none;
+}
+
+#sendanemail i{
+  font-size: 1.7em;
+  color:orange;
+  padding: 2% 0 2% 0;
 }
 
 #sendanemail{
@@ -277,7 +349,15 @@ footer{
   #nav {background: rgba(217, 214, 198, 1.0);}
 }
 
-@media screen and (max-width: 670px) {
+@media screen and (max-width: 480px) {
+  /*html { background: url(../images/backgroundshot.jpg) #000 no-repeat center center fixed; }*/
+  #bgvid { display: none; }
+  body{background-color: white;}
+  #intro.introduction, #maincontent { width:100%; padding:0;}
+  #nav {display: none;}
+}
+
+@media screen and (max-width: 320px) {
   /*html { background: url(../images/backgroundshot.jpg) #000 no-repeat center center fixed; }*/
   #bgvid { display: none; }
   body{background-color: white;}

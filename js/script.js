@@ -133,11 +133,23 @@ $(function(){
 
   // here maybe instead of video fading out just make the backgrounf opaque..
 
-  $("#enter, #topmenu").on('click', function(){
-    $bgvid.addClass("stopfade");
+  $("#enter").on('click', function(){
+    $('#bgvid').addClass("stopfade");
     $('#maincontent').delay(500).fadeToggle(200);
+    $('#bgvid').get(0).pause();
     $('#section1, #vidpause').fadeToggle();
     $('#nav').delay(600).slideToggle(1000);
     // move video or somehow slide down to next page on chevron
   })
+
+
+  $("#topmenu").on('click', function(){
+    $('#bgvid').removeClass("stopfade");
+    $('#maincontent').delay(500).fadeToggle(200);
+    $('#bgvid').get(0).play();
+    $('#section1, #vidpause').fadeToggle();
+    $('#nav').delay(600).slideToggle(1000);
+    // move video or somehow slide down to next page on chevron
+  })
+
 });
