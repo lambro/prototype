@@ -66,8 +66,7 @@ $(function(){
         removeActive();
         $intromenu.addClass('active')
       }
-    },
-    offset: 100
+    }
   })
 
   $intro.waypoint({
@@ -76,9 +75,6 @@ $(function(){
         removeActive();
         $intromenu.addClass('active')
       }
-    },
-    offset: function() {
-      return -$(this).height();
     }
   })
 
@@ -88,8 +84,7 @@ $(function(){
         removeActive();
         $aboutmenu.addClass('active')
       }
-    },
-    offset: -10
+    }
   })
 
   $about.waypoint({
@@ -98,9 +93,24 @@ $(function(){
         removeActive();
         $aboutmenu.addClass('active')
       }
-    },
-    offset: function() {
-      return -$(this).height();
+    }
+  })
+
+  $experience.waypoint({
+    handler: function(direction){
+      if (direction == "down") {
+        removeActive();
+        $experiencemenu.addClass('active')
+      }
+    }
+  })
+
+  $experience.waypoint({
+    handler: function(direction){
+      if (direction == "up") {
+        removeActive();
+        $experiencemenu.addClass('active')
+      }
     }
   })
 
