@@ -1,0 +1,133 @@
+/*utilities
+font-family: 'Voces', cursive;
+font-family: 'Overlock', cursive;
+font-family: 'Offside', cursive;
+font-family: 'Anton', sans-serif;
+font-family: 'Damion', cursive;
+font-family: 'Sacramento', cursive;
+font-family: 'Josefin Slab', serif;
+font-family: 'Inconsolata';
+*/
+
+*{
+ font-family: 'Inconsolata';
+}
+
+body{
+  background-image: url("../images/smoke.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+h1{
+  font-family: 'Sacramento', cursive;
+  display: inline-block;
+  font-size: 3em;
+  margin:0 auto;
+}
+
+.mainpage-container{
+  border: 5px solid rgba(212, 67, 48, 1.0);
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.6);
+  width: 60%;
+  margin: 100px auto;
+  text-align: center;
+  padding: 5%;
+}
+
+.mainpage-container h1{
+  font-size: 5em;
+}
+
+.fa-home, .fa-chevron-left, .fa-chevron-right, .fa-video-camera{
+ font-size: 1em;
+ margin: 3%;
+ padding:30%;
+ text-align: center;
+ display: inline-block;
+}
+
+.icons{
+  text-align: center;
+}
+
+i{
+  text-align: center;
+  font-size: 2em;
+  margin: 3%;
+  padding:1%;
+  text-align: center;
+  display: inline-block;
+}
+
+a{
+  text-decoration: none;
+  color:black;
+  display:inline-block;
+  text-align: center;
+}
+
+a:hover{
+  color:rgba(212, 67, 48, 1.0);
+}
+
+form{
+  width:70%;
+  margin: 0 auto;
+}
+
+input{
+width: 100%;
+ margin-top: 3%;
+ margin-bottom: 3%;
+ font-family: 'Overlock', cursive;
+ letter-spacing: 2px;
+ border-radius: 5px;
+ border: none;
+ padding: 2%;
+ font-size: 1em;
+}
+
+label{
+  letter-spacing: 2px;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+footer{
+position:absolute;
+bottom:0;
+width:100%;
+}
+
+footer img{
+  height: 40px;
+  vertical-align: bottom;
+  margin:0;
+  padding-left:20%;
+  padding-top: 15%;
+}
+
+footer .fa-twitter, footer .fa-github{
+  font-size: 2em;
+  padding-bottom: 40%;
+  padding-left: 20%;
+}
+
+.slide.ng-enter, .slide.ng-leave {
+  -webkit-transition:0.5s linear all;
+}
+
+.slide.ng-enter {
+  position:absolute;
+  right:110%;
+  }        /* starting animations for enter */
+.slide.ng-enter.ng-enter-active { position:relative;} /* terminal animations for enter */
+.slide.ng-leave {position:absolute;
+  left:110%;}        /* starting animations for leave */
+.slide.ng-leave.ng-leave-active { position:relative;} /* terminal animations for leave */
+
+
+
+

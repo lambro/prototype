@@ -4,7 +4,7 @@ $(function(){
   console.log( "ready!" );
 
   $(".firstcontainer").fadeIn(200).animate({
-    height: '30%',
+    height: '35%',
     color: 'black'
   }, 800).delay(200).animate({
     width: '60%',
@@ -40,7 +40,7 @@ $(function(){
       {
         duration: 1000,
         easing: 'easeInOutExpo',
-        offset: { 'left':0, 'top': -130 }
+        offset: { 'left':0, 'top': -90 }
       }
     );
     removeActive();
@@ -66,8 +66,9 @@ $(function(){
         removeActive();
         $intromenu.addClass('active')
       }
-    }
-  })
+    },
+    offset: 100
+  });
 
   $intro.waypoint({
     handler: function(direction){
@@ -75,8 +76,11 @@ $(function(){
         removeActive();
         $intromenu.addClass('active')
       }
+    },
+    offset: function() {
+      return -$(this).height();
     }
-  })
+  });
 
   $about.waypoint({
     handler: function(direction){
@@ -84,8 +88,9 @@ $(function(){
         removeActive();
         $aboutmenu.addClass('active')
       }
-    }
-  })
+    },
+    offset: -10
+  });
 
   $about.waypoint({
     handler: function(direction){
@@ -93,28 +98,11 @@ $(function(){
         removeActive();
         $aboutmenu.addClass('active')
       }
+    },
+    offset: function() {
+      return -$(this).height();
     }
-  })
-
-  $experience.waypoint({
-    handler: function(direction){
-      if (direction == "down") {
-        removeActive();
-        $experiencemenu.addClass('active')
-      }
-    }
-  })
-
-  $experience.waypoint({
-    handler: function(direction){
-      if (direction == "up") {
-        removeActive();
-        $experiencemenu.addClass('active')
-      }
-    }
-  })
-
-
+  });
 
   function removeActive() {
     $nav_links.removeClass('active');
@@ -141,7 +129,7 @@ $(function(){
 
   // ending introduction //
 
-  // here maybe instead of video fading out just make the backgrounf opaque..
+  // here maybe instead of video fading out just make the background opaque..
 
   $("#enter").on('click', function(){
     $('#bgvid').addClass("stopfade");
